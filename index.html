@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lotpotfy - Dhaval's Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="header-row">
+      <!-- Left Logo -->
+      <div class="logo-row">
+        <img src="asset/banner.png" alt="Lotpotfy Logo" class="logo-img" />
+        <div class="logo-text">
+          <h1>lotpotfy</h1>
+          <p>goated</p>
+        </div>
+      </div>
+      <!-- Top Right Buttons -->
+      <div class="top-buttons">
+        <button>Download</button>
+        <button>Support</button>
+        <button>Subscriptions</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <section class="search-bar">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="What’s your mood today?"
+      oninput="filterSongs()"
+    />
+  </section>
+
+  <!-- PLAYLISTS -->
+  <main>
+    <section class="playlist">
+      <h2>Frank Ocean</h2>
+      <div id="frankList" class="songs"></div>
+    </section>
+
+    <section class="playlist">
+      <h2>Tyler, The Creator</h2>
+      <div id="tylerList" class="songs"></div>
+    </section>
+
+    <!-- MUSIC PLAYER -->
+    <section class="music-player">
+      <img id="albumArt" src="asset/novacane.jpg" class="album-art" alt="Album Art" />
+      <h3 id="songTitle">Now Playing: Novacane - Frank Ocean</h3>
+      <div class="custom-player">
+        <button onclick="prevSong()">⏮️</button>
+        <button onclick="togglePlay()" id="playPauseBtn">▶️</button>
+        <button onclick="nextSong()">⏭️</button>
+        <input type="range" id="progressBar" value="0" />
+      </div>
+      <!-- TIMER -->
+      <div class="time-display">
+  <span id="currentTime">0:00</span>
+  <span id="duration">0:00</span>
+</div>
+
+      <audio id="audio">
+        <source id="audioSource" src="music/novacane.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
+
+    <!-- LIKED SONGS -->
+    <section class="liked-songs">
+      <h2>Liked Songs</h2>
+      <div id="likedContainer" class="songs"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made by Dhaval 🔥</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
